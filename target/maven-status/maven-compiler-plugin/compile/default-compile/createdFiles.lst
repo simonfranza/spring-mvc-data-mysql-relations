@@ -1,0 +1,13 @@
+com/dovene/tripbook/model/Trip.class
+com/dovene/tripbook/model/Booking.class
+com/dovene/tripbook/repository/BookingRepository.class
+com/dovene/tripbook/controller/TripController.class
+com/dovene/tripbook/config/WebAppInitializer.class
+com/dovene/tripbook/controller/LoginController.class
+com/dovene/tripbook/config/MvcConfig.class
+com/dovene/tripbook/repository/UserJpaRepository.class
+com/dovene/tripbook/model/User.class
+com/dovene/tripbook/repository/TripRepository.class
+com/dovene/tripbook/config/DBConfig.class
+com/dovene/tripbook/controller/BookingController.class
+com/dovene/tripbook/controller/BookingEditor.class

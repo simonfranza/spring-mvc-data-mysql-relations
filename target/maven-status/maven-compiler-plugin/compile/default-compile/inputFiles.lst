@@ -1,0 +1,13 @@
+/Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/controller/BookingController.java
+/Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/repository/BookingRepository.java
+/Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/repository/TripRepository.java
+/Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/controller/BookingEditor.java
+/Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/model/Trip.java
+/Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/repository/UserJpaRepository.java
+/Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/controller/LoginController.java
+/Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/config/MvcConfig.java
+/Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/config/DBConfig.java
+/Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/config/WebAppInitializer.java
+/Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/controller/TripController.java
+/Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/model/Booking.java
+/Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/model/User.java
