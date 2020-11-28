@@ -3,12 +3,14 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
-</head>
+<jsp:include page="../common/header.jsp" />
 <body>
-	<h2>Accès refusé</h2>
-	<p><a href="login"> Retry </a><p>
+<div class="container">
+    <div class="row justify-content-md-center">
+    <h2>Access denied</h2>
+    </div>
+	<a class="btn btn-primary btn-lg" href="login" role="button">Retry login</a>
+	<p>
+<jsp:include page="../common/footer.jsp" />
 </body>
 </html>

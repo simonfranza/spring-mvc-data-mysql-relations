@@ -27,14 +27,14 @@ public class TripController {
             return "redirect:/accessDenied";
         }
         model.addAttribute("trips", tripRepository.findAll());
-        return "trips";
+        return "trips/trips";
     }
 
     // Add a new trip
     @GetMapping("/create")
     public String add(Model model) {
         model.addAttribute("trip", new Trip());
-        return "addTrip";
+        return "trips/addTrip";
     }
 
     @PostMapping("/create")
@@ -48,7 +48,7 @@ public class TripController {
     @RequestMapping("/edit/{city}")
     public String edit(Model model, @PathVariable("city") String city) {
         model.addAttribute("trip", tripRepository.findOne(city));
-        return "editTrip";
+        return "trips/editTrip";
     }
 
     @PostMapping("edit/{city}")

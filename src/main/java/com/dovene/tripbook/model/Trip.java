@@ -45,6 +45,11 @@ public class Trip {
         this.date = date;
     }
 
+    public List<Booking> getBookings() {
+        return bookings;
+    }
 
-
+    public void setBookings(List<Booking> bookings) {
+        this.bookings = bookings;
+    }
 }

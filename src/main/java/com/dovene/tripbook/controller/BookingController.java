@@ -28,7 +28,13 @@ public class BookingController {
             return "redirect:/accessDenied";
         }
         model.addAttribute("bookings", bookingRepository.findAll());
-        return "bookings";
+        return "booking/bookings";
+    }
+
+    @GetMapping("/trip/{city}")
+    public String list(HttpSession session, Model model, @PathVariable("city") String city) {
+        model.addAttribute("bookings", tripRepository.findTripWithBookings(city).getBookings());
+        return "booking/bookings";
     }
 
     // Add a new trip
@@ -36,7 +42,7 @@ public class BookingController {
     public String add(Model model) {
         model.addAttribute("booking", new Booking());
         model.addAttribute("trips", tripRepository.findAll());
-        return "addBooking";
+        return "booking/addBooking";
     }
 
     @PostMapping("/create")
@@ -45,4 +51,25 @@ public class BookingController {
         return "redirect:/bookings";
     }
 
+    @GetMapping
+    @RequestMapping("/delete")
+    public String delete(@RequestParam("id") Integer id) {
+        bookingRepository.delete(id);
+        return "redirect:/bookings";
+    }
+
+    // Edit a trip
+    @GetMapping
+    @RequestMapping("/edit/{id}")
+    public String edit(Model model, @PathVariable("id") Integer id) {
+        model.addAttribute("booking", bookingRepository.findOne(id));
+        model.addAttribute("trips", tripRepository.findAll());
+        return "booking/editBooking";
+    }
+
+    @PostMapping("edit/{id}")
+    public String editSave(@ModelAttribute Booking booking) {
+        bookingRepository.save(booking);
+        return "redirect:/booking";
+    }
 }

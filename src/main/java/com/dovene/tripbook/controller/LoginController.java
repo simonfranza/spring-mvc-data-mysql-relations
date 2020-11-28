@@ -21,7 +21,7 @@ public class LoginController {
     @GetMapping
     public String login(Model model) {
         model.addAttribute("user", new User());
-        return "login";
+        return "user/login";
     }
 
     @PostMapping
@@ -30,7 +30,7 @@ public class LoginController {
         boolean isUserAllowed = user != null && user.getPassword().equals(userParam.getPassword());
         if (isUserAllowed) {
             session.setAttribute("user", userParam);
-            return "redirect:/trips";
+            return "redirect:/dashboard";
         } else {
             return "redirect:/accessDenied";
         }
@@ -38,6 +38,6 @@ public class LoginController {
 
     @GetMapping("/accessDenied")
     public String accessDenied(Model model) {
-        return "accessDenied";
+        return "user/accessDenied";
     }
 }

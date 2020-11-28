@@ -54,6 +54,9 @@ public class DBConfig {
         props.put("hibernate.show_sql", env.getProperty("hibernate.show_sql"));
         props.put("hibernate.format_sql", env.getProperty("hibernate.format_sql"));
         props.put("hibernate.dialect", env.getProperty("hibernate.dialect"));
+        //below line is an anti pattern that passes by lazy loading exception and should never be used in prod
+        // props.put("hibernate.enable_lazy_load_no_trans", env.getProperty("hibernate.enable_lazy_load_no_trans"));
+
         return props;
     }
 
