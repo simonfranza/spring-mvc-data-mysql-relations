@@ -1,8 +1,15 @@
 package com.dovene.tripbook.model;
 
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import javax.persistence.*;
 
 @Entity
+@Getter
+@Setter
+@NoArgsConstructor
 public class Booking {
 
     @Id
@@ -14,31 +21,4 @@ public class Booking {
     @ManyToOne
     @JoinColumn(name="tripCity")
     private Trip trip;
-
-    public Booking() {
-    }
-
-    public int getIdBooking() {
-        return idBooking;
-    }
-
-    public void setIdBooking(int idBooking) {
-        this.idBooking = idBooking;
-    }
-
-    public String getCustomerFullName() {
-        return customerFullName;
-    }
-
-    public void setCustomerFullName(String customerFullName) {
-        this.customerFullName = customerFullName;
-    }
-
-    public Trip getTrip() {
-        return trip;
-    }
-
-    public void setTrip(Trip trip) {
-        this.trip = trip;
-    }
 }
