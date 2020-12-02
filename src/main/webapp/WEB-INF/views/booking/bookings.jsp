@@ -6,7 +6,7 @@
 <body>
 <div class="container">
 	 <br />
-     	 <a class="btn btn-dark btn-lg" href="bookings/create">Add a booking</a></h3>
+     	 <a class="btn btn-dark btn-lg" href="bookings/create">Add a booking</a>
 		 <br />
     	 <br />
     		<table class="table table-striped table-hover">

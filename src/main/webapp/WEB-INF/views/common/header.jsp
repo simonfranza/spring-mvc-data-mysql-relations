@@ -16,6 +16,7 @@
 <spring:url value="/" var="home" />
 <spring:url value="/trips" var="trips" />
 <spring:url value="/bookings" var="bookings" />
+<spring:url value="/neighbors" var="neighbors" />
 <spring:url value="/login" var="login" />
 <spring:url value="/logout" var="logout" />
 <spring:url value="/dashboard" var="dashboard" />

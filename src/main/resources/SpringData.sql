@@ -23,12 +23,12 @@ DROP TABLE IF EXISTS `Booking`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Booking` (
-  `idBooking` int NOT NULL AUTO_INCREMENT,
-  `customerFullName` varchar(45) DEFAULT NULL,
-  `tripCity` varchar(45) DEFAULT NULL,
-  PRIMARY KEY (`idBooking`),
-  KEY `tripCity_idx` (`tripCity`),
-  CONSTRAINT `tripCity` FOREIGN KEY (`tripCity`) REFERENCES `Trip` (`city`) ON DELETE CASCADE ON UPDATE CASCADE
+                           `idBooking` int NOT NULL AUTO_INCREMENT,
+                           `customerFullName` varchar(45) DEFAULT NULL,
+                           `tripCity` varchar(45) DEFAULT NULL,
+                           PRIMARY KEY (`idBooking`),
+                           KEY `tripCity_idx` (`tripCity`),
+                           CONSTRAINT `tripCity` FOREIGN KEY (`tripCity`) REFERENCES `Trip` (`city`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -50,11 +50,11 @@ DROP TABLE IF EXISTS `Trip`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `Trip` (
-  `city` varchar(45) NOT NULL,
-  `price` varchar(45) DEFAULT NULL,
-  `date` datetime DEFAULT NULL,
-  PRIMARY KEY (`city`),
-  UNIQUE KEY `city_UNIQUE` (`city`)
+                        `city` varchar(45) NOT NULL,
+                        `price` varchar(45) DEFAULT NULL,
+                        `date` datetime DEFAULT NULL,
+                        PRIMARY KEY (`city`),
+                        UNIQUE KEY `city_UNIQUE` (`city`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -76,10 +76,10 @@ DROP TABLE IF EXISTS `User`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `User` (
-  `password` varchar(45) DEFAULT NULL,
-  `login` varchar(45) NOT NULL,
-  `enabled` tinyint(1) NOT NULL DEFAULT '1',
-  PRIMARY KEY (`login`)
+                        `password` varchar(45) DEFAULT NULL,
+                        `login` varchar(45) NOT NULL,
+                        `enabled` tinyint(1) NOT NULL DEFAULT '1',
+                        PRIMARY KEY (`login`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -92,6 +92,82 @@ LOCK TABLES `User` WRITE;
 INSERT INTO `User` VALUES ('dov','dov',1),('spring','spring',1);
 /*!40000 ALTER TABLE `User` ENABLE KEYS */;
 UNLOCK TABLES;
+
+
+
+
+--
+-- Table structure for table `Neighbor`
+--
+
+DROP TABLE IF EXISTS `Neighbor`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `Neighbor` (
+                           `id` int NOT NULL AUTO_INCREMENT,
+                           `firstName` varchar(45) DEFAULT NULL,
+                           `lastName` varchar(45) DEFAULT NULL,
+                           `address` varchar(45) DEFAULT NULL,
+                           `phone` varchar(45) DEFAULT NULL,
+                           `email` varchar(45) DEFAULT NULL,
+                           PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Table structure for table `Service`
+--
+
+DROP TABLE IF EXISTS `Service`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `Service` (
+                            `id` int NOT NULL AUTO_INCREMENT,
+                            `label` varchar(45) DEFAULT NULL,
+                            PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+
+--
+-- Table structure for association table `NeighborService`
+--
+
+DROP TABLE IF EXISTS `NeighborService`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `NeighborService` (
+                              `neighbor_id` int NOT NULL,
+                              `service_id` int NOT NULL,
+                              FOREIGN KEY (neighbor_id) REFERENCES Neighbor(id) ON DELETE CASCADE,
+                              FOREIGN KEY (service_id) REFERENCES Service(id) ON DELETE CASCADE,
+                              UNIQUE (neighbor_id, service_id)
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+
+--
+-- Table structure for table `ServiceRequest`
+--
+
+DROP TABLE IF EXISTS `ServiceRequest`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `ServiceRequest` (
+                            `id` int NOT NULL AUTO_INCREMENT,
+                            `neighbor_id` int NOT NULL,
+                            `service_id` int NOT NULL,
+                            PRIMARY KEY (`id`),
+                            CONSTRAINT `service_request_neighbor` FOREIGN KEY (neighbor_id) REFERENCES Neighbor(id) ON DELETE CASCADE ON UPDATE CASCADE,
+                            CONSTRAINT `service_request_service` FOREIGN KEY (service_id) REFERENCES Service(id) ON DELETE CASCADE ON UPDATE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+
+
+
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
