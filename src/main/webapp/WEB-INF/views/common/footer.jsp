@@ -2,7 +2,7 @@
 <div class="container">
 	<hr>
 	<footer>
-		<p>&copy; Copyrights www.spring.dov 2020</p>
+		<p>&copy; Copyrights www.dov.spring-2020</p>
 	</footer>
 </div>
 

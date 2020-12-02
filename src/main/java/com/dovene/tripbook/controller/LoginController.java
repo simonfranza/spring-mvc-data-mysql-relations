@@ -36,6 +36,13 @@ public class LoginController {
         }
     }
 
+    @GetMapping("/logout")
+    public String logout(Model model, HttpSession session) {
+        session.setAttribute("user", null);
+        model.addAttribute("user", new User());
+        return "user/login";
+    }
+
     @GetMapping("/accessDenied")
     public String accessDenied(Model model) {
         return "user/accessDenied";

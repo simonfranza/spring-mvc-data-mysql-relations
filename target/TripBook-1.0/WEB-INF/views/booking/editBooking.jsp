@@ -27,10 +27,5 @@
           </div>
       </form:form>
  <jsp:include page="../common/footer.jsp" />
-  <script>
-    $(function () {
-    $("#datepicker").datepicker();
-    });
-  </script>
      </body>
 </html>
