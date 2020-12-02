@@ -22,11 +22,11 @@
 
             <div class="form-group col-md-6">
             <label for="Password">Password</label>
-             <form:input type="text" path="password" id="Password"  cssClass="form-control" placeholder="Password"/>
+             <form:input type="password" path="password" id="Password"  cssClass="form-control" placeholder="Password"/>
              <small id="passwordHelp" class="form-text text-muted">Use a strong password</small>
             </div>
 
-           	<div class="form-group col-md-6"">
+           	<div class="form-group col-md-6">
        		<button type="submit" class="btn btn-success">Submit</button>
            	</div>
 

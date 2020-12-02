@@ -39,7 +39,7 @@ public class NeighborController {
 	public String addSave(@ModelAttribute Neighbor neighbor) {
 		neighborRepository.save(neighbor);
 
-		return String.format("%s/neighborList", VIEW_DIRECTORY);
+		return "redirect:/neighbors";
 	}
 
 	// Edit an existing neighbor

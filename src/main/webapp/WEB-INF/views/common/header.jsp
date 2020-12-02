@@ -17,6 +17,7 @@
 <spring:url value="/trips" var="trips" />
 <spring:url value="/bookings" var="bookings" />
 <spring:url value="/neighbors" var="neighbors" />
+<spring:url value="/services" var="services" />
 <spring:url value="/login" var="login" />
 <spring:url value="/logout" var="logout" />
 <spring:url value="/dashboard" var="dashboard" />
@@ -37,6 +38,9 @@
             </li>
             <li class="nav-item">
                 <a class="nav-item nav-link" href="${neighbors}">Neighbors</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link" href="${services}">Services</a>
             </li>
             <li class="nav-item">
                 <a class="nav-item nav-link" href="${login}">Login</a>

@@ -10,7 +10,7 @@
     </div>
     <form:form action="#" modelAttribute="neighbor" method="post">
     <div class="form-group col-md-6">
-        <label for=firstName">First Name</label>
+        <label for="firstName">First Name</label>
         <form:input type="text" path="firstName" placeholder="John" id="firstName" cssClass="form-control"/>
         <br>
         <label for="lastName">Last Name</label>
