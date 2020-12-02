@@ -29,7 +29,6 @@ public class Neighbor {
 			name = "NeighborService",
 			joinColumns = @JoinColumn(name = "neighbor_id"),
 			inverseJoinColumns = @JoinColumn(name = "service_id"))
-	// @ManyToMany(mappedBy = "neighbors")
 	private Set<Service> proposedServices;
 
 	@OneToMany(mappedBy="neighbor")
