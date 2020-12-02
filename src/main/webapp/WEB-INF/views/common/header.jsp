@@ -24,23 +24,26 @@
 <nav class="navbar navbar-expand navbar-dark bg-dark">
   <a class="navbar-brand" href="${home}">Home</a>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-item nav-link active" href="${dashboard}">Dashboard</a>
-      </li>
-      <li class="nav-item">
-         <a class="nav-item nav-link" href="${trips}">Trips</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-item nav-link" href="${bookings}">Bookings</a>
-      </li>
-      <li class="nav-item">
-          <a class="nav-item nav-link" href="${login}">Login</a>
-      </li>
-      <li class="nav-item">
-           <a class="nav-item nav-link disabled" href="${logout}" >Logout</a>
-      </li>
-    </ul>
-  </div>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-item nav-link active" href="${dashboard}">Dashboard</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link" href="${trips}">Trips</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link" href="${bookings}">Bookings</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link" href="${neighbors}">Neighbors</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link" href="${login}">Login</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-item nav-link disabled" href="${logout}" >Logout</a>
+            </li>
+        </ul>
+    </div>
 </nav>
