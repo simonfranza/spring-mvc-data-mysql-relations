@@ -3,37 +3,50 @@ package com.dovene.tripbook.controller;
 import com.dovene.tripbook.model.User;
 import com.dovene.tripbook.repository.UserJpaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @Controller
-@RequestMapping(value={"/", "login"})
+@RequestMapping(value={"/login"})
 public class LoginController {
     @Autowired
     UserJpaRepository userJpaRepository;
 
-    @GetMapping
-    public String login(Model model) {
-        model.addAttribute("user", new User());
-        return "user/login";
+
+    @RequestMapping(method = RequestMethod.GET)
+    public ModelAndView login(@RequestParam(value = "error", required = false) String error,
+                              @RequestParam(value = "logout", required = false) String logout) {
+
+        ModelAndView model = new ModelAndView();
+        if (error != null) {
+            model.addObject("error", "Invalid username and password!");
+        }
+
+        if (logout != null) {
+            model.addObject("msg", "You've been logged out successfully.");
+        }
+        model.setViewName("user/login");
+
+        return model;
+
     }
 
-    @PostMapping
-    public String login(HttpSession session, @ModelAttribute User userParam) {
-        User user = userJpaRepository.findOne(userParam.getLogin());
-        boolean isUserAllowed = user != null && user.getPassword().equals(userParam.getPassword());
-        if (isUserAllowed) {
-            session.setAttribute("user", userParam);
-            return "redirect:/dashboard";
-        } else {
-            return "redirect:/accessDenied";
+    @GetMapping(value="/logout")
+    public String logoutPage (HttpServletRequest request, HttpServletResponse response) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null){
+            new SecurityContextLogoutHandler().logout(request, response, auth);
         }
+        return "redirect:/login?logout=true";
     }
 
     @GetMapping("/accessDenied")

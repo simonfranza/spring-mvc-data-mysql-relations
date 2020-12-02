@@ -17,7 +17,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Controller
-@RequestMapping("/dashboard")
+@RequestMapping(value={"/", "dashboard"})
 @Transactional
 public class DashboardController {
 
@@ -26,9 +26,6 @@ public class DashboardController {
 
     @GetMapping
     public String list(HttpSession session, Model model) {
-        if (session.getAttribute("user") == null) {
-            return "redirect:/accessDenied";
-        }
         model.addAttribute("dashboardDatas", dashboardService.getTripsReportData());
         return "report/dashboard";
     }

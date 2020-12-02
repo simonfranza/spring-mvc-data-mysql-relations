@@ -23,9 +23,6 @@ public class TripController {
 
     @GetMapping
     public String list(HttpSession session, Model model) {
-        if (session.getAttribute("user") == null) {
-            return "redirect:/accessDenied";
-        }
         model.addAttribute("trips", tripRepository.findAll());
         return "trips/trips";
     }

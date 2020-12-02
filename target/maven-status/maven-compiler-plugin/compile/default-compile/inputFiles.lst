@@ -7,6 +7,8 @@
 /Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/repository/UserJpaRepository.java
 /Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/model/DashboardData.java
 /Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/controller/LoginController.java
+/Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/config/security/SecurityConfig.java
+/Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/config/security/SpringSecurityInitializer.java
 /Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/config/MvcConfig.java
 /Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/config/DBConfig.java
 /Users/doveneagogue/Dev/JavaEE/cesi-jee/TripBook/src/main/java/com/dovene/tripbook/config/WebAppInitializer.java

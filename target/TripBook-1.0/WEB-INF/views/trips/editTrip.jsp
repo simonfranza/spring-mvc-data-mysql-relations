@@ -20,9 +20,9 @@
           </div>
 
           <div class="form-group col-md-6">
-          <label for="date">Date</label>
+          <label for="datepicker">Date</label>
           <fmt:formatDate value="${trip.date}" pattern="dd/MM/yyyy" var="theDate" />
-          <form:input type="text" path="date" value="${theDate}" placeholder="input trip date" id="date" cssClass="form-control"/>
+          <form:input type="text" path="date" value="${theDate}" placeholder="input trip date" id="datepicker" cssClass="form-control"/>
           </div>
 
        	  <div class="form-group col-md-6">
@@ -30,5 +30,11 @@
           </div>
       </form:form>
      </div>
+ <jsp:include page="../common/footer.jsp" />
+  <script>
+    $(function () {
+    $("#datepicker").datepicker();
+    });
+  </script>
      </body>
 </html>

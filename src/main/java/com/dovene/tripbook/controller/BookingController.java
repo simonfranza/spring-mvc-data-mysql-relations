@@ -24,9 +24,6 @@ public class BookingController {
 
     @GetMapping
     public String list(HttpSession session, Model model) {
-        if (session.getAttribute("user") == null) {
-            return "redirect:/accessDenied";
-        }
         model.addAttribute("bookings", bookingRepository.findAll());
         return "booking/bookings";
     }

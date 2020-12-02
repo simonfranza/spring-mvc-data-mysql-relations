@@ -7,8 +7,10 @@ com/dovene/tripbook/controller/LoginController.class
 com/dovene/tripbook/config/MvcConfig.class
 com/dovene/tripbook/controller/DashboardController.class
 com/dovene/tripbook/repository/UserJpaRepository.class
+com/dovene/tripbook/config/security/SecurityConfig.class
 com/dovene/tripbook/service/DashboardService.class
 com/dovene/tripbook/model/DashboardData.class
+com/dovene/tripbook/config/security/SpringSecurityInitializer.class
 com/dovene/tripbook/model/User.class
 com/dovene/tripbook/repository/TripRepository.class
 com/dovene/tripbook/config/DBConfig.class
