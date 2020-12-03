@@ -159,6 +159,7 @@ CREATE TABLE `ServiceRequest` (
                             `id` int NOT NULL AUTO_INCREMENT,
                             `neighbor_id` int NOT NULL,
                             `service_id` int NOT NULL,
+                            `date` datetime DEFAULT NULL,
                             PRIMARY KEY (`id`),
                             CONSTRAINT `service_request_neighbor` FOREIGN KEY (neighbor_id) REFERENCES Neighbor(id) ON DELETE CASCADE ON UPDATE CASCADE,
                             CONSTRAINT `service_request_service` FOREIGN KEY (service_id) REFERENCES Service(id) ON DELETE CASCADE ON UPDATE CASCADE

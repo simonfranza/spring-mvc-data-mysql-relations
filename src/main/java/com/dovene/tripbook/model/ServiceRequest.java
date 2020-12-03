@@ -18,13 +18,12 @@ public class ServiceRequest {
 	private int id;
 
 	@ManyToOne
-	@JoinColumn(name="requestedServices")
+	@JoinColumn(name="neighbor_id")
 	private Neighbor neighbor;
 
 	@ManyToOne
-	@JoinColumn(name="requests")
+	@JoinColumn(name="service_id")
 	private Service service;
 
 	private Date date;
-
 }
