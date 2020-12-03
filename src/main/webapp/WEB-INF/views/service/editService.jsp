@@ -25,6 +25,7 @@
                             <th colspan="2">Name</th>
                             <th>Phone</th>
                             <th>Email</th>
+                            <th>Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -34,6 +35,7 @@
                                 <td>${neighbor.lastName}</td>
                                 <td>${neighbor.phone}</td>
                                 <td>${neighbor.email}</td>
+                                <td><a href="/trip/services/delete/proposition?serviceId=${service.id}&neighborId=${neighbor.id}" class="btn btn-danger" onclick="if (!(confirm('Are you sure ?'))) return false">Delete</a></td>
                             </tr>
                         </c:forEach>
                     </tbody>
@@ -55,6 +57,7 @@
                         <th colspan="2">Name</th>
                         <th>Phone</th>
                         <th>Email</th>
+                        <th>Actions</th>
                     </tr>
                     </thead>
                     <tbody>
@@ -64,6 +67,7 @@
                             <td>${request.neighbor.lastName}</td>
                             <td>${request.neighbor.phone}</td>
                             <td>${request.neighbor.email}</td>
+                            <td><a href="/trip/services/delete/request/${request.id}" class="btn btn-danger" onclick="if (!(confirm('Are you sure ?'))) return false">Delete</a></td>
                         </tr>
                     </c:forEach>
                     </tbody>

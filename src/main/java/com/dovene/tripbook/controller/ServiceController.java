@@ -91,7 +91,6 @@ public class ServiceController {
 		return "redirect:/services";
 	}
 
-
 	// Propose a service
 	@RequestMapping("/request/{id}")
 	public String requestService(Model model, @PathVariable("id") Integer serviceId) {
@@ -107,6 +106,25 @@ public class ServiceController {
 	@PostMapping("request/{id}")
 	public String requestService(@ModelAttribute ServiceRequest serviceRequest) {
 		serviceRequestRepository.save(serviceRequest);
+
+		return "redirect:/services";
+	}
+
+	@GetMapping
+	@RequestMapping("/delete/request/{id}")
+	public String deleteRequest(@PathVariable("id") Integer requestId) {
+		serviceRequestRepository.delete(requestId);
+
+		return "redirect:/services";
+	}
+
+	@GetMapping
+	@RequestMapping("/delete/proposition")
+	public String deleteRequest(@RequestParam("neighborId") Integer neighborId, @RequestParam("serviceId") Integer serviceId) {
+		Neighbor neighbor = neighborRepository.findOne(neighborId);
+		neighbor.getProposedServices().removeIf(service -> service.getId() == serviceId);
+
+		neighborRepository.save(neighbor);
 
 		return "redirect:/services";
 	}
